@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D3DInit", "D3DInit\D3DInit.vcxproj", "{E656A230-8717-4A0E-B7E0-56492593112F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E656A230-8717-4A0E-B7E0-56492593112F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E656A230-8717-4A0E-B7E0-56492593112F}.Debug|Win32.Build.0 = Debug|Win32
+		{E656A230-8717-4A0E-B7E0-56492593112F}.Release|Win32.ActiveCfg = Release|Win32
+		{E656A230-8717-4A0E-B7E0-56492593112F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
