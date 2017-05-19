@@ -178,6 +178,7 @@ HRESULT	ObjectsInit()
 	memcpy(pVertices, vertices, sizeof(vertices));
 	g_pVertexBuffer->Unlock();
 	g_pd3dDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);  //如果不设置，逆时针的三角形 就不会显示
+	g_pd3dDevice->SetRenderState(D3DRS_SHADEMODE, D3DSHADE_GOURAUD);
 
 	return S_OK;
 }
@@ -186,12 +187,8 @@ void Direct3DRender(HWND hwnd)
 {
 	g_pd3dDevice->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0, 100, 0), 1.0f, 0);
 
-	RECT formatRect;
-	GetClientRect(hwnd, &formatRect);
- 
 	g_pd3dDevice->BeginScene();  
 
-	g_pd3dDevice->SetRenderState(D3DRS_SHADEMODE, D3DSHADE_GOURAUD);
 	g_pd3dDevice->SetStreamSource(0, g_pVertexBuffer, 0, sizeof(CUSTOMVERTEX));
 	g_pd3dDevice->SetFVF(D3DFVF_CUSTOMVERTEX);
 	g_pd3dDevice->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, 2);

@@ -251,6 +251,7 @@ HRESULT	ObjectsInit()
 	}
 
 	g_pd3dDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);  //如果不设置，逆时针的三角形 就不会显示
+	g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, FALSE);  //不关闭光照就不显示？
 
 	return S_OK;
 }
@@ -262,7 +263,7 @@ void  SetTransform()
 	g_pd3dDevice->SetTransform(D3DTS_WORLD, &matWorld);
 
 	D3DXMATRIX matView;
-	D3DXMatrixLookAtLH(&matView, &D3DXVECTOR3(0, 0, -5)
+	D3DXMatrixLookAtLH(&matView, &D3DXVECTOR3(0, 0, 5)
 		, &D3DXVECTOR3(0, 0, 0)
 		, &D3DXVECTOR3(0, 1, 0));
 	g_pd3dDevice->SetTransform(D3DTS_VIEW, &matView);
@@ -283,7 +284,6 @@ void Direct3DRender(HWND hwnd)
 	{
 		SetTransform();
 		g_pd3dDevice->SetTexture(0, NULL);
-		g_pd3dDevice->SetRenderState(D3DRS_LIGHTING, FALSE);  //不关闭光照就不显示？
 		g_teapot->DrawSubset(0);
 		g_pd3dDevice->EndScene();
 	}
